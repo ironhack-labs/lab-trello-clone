@@ -1,0 +1,119 @@
+@import './palette';
+
+/**
+ *  Basic reset
+ *
+ */
+html {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: $trello-primary-color;
+}
+
+body {
+    background-color: $trello-primary-color;
+}
+
+.trello-container {
+    background-color: $trello-primary-color;
+}
+
+// Set all placeholders color
+::-webkit-input-placeholder {
+    color:    $trello-secondary-color;
+}
+:-moz-placeholder {
+   color:    $trello-secondary-color;
+   opacity:  1;
+}
+::-moz-placeholder {
+   color:    $trello-secondary-color;
+   opacity:  1;
+}
+:-ms-input-placeholder {
+   color:    $trello-secondary-color;
+}
+
+
+/*
+ * Drag'n'drop vendor styling
+ * see: https://github.com/bevacqua/dragula#css
+ *
+ */
+.gu-mirror {
+  cursor: grabbing;
+  position: fixed;
+  margin: auto;
+  padding: 10px;
+  z-index: 9999;
+  opacity: .8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -webkit-transform: rotate(7deg);
+  transform: rotate(7deg);
+}
+
+.gu-hide {
+  display: none !important
+}
+
+.gu-unselectable {
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+  user-select: none!important
+}
+
+.gu-transit {
+  opacity: .2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20)
+}
+
+/**
+ * Custom bs modal
+ */
+
+.modal-content, trello-modal {
+  border-radius: 5px;
+  background-color: $trello-secondary-color;
+
+  .modal-header {
+      border-bottom: none;
+      text-align: center;
+
+      h2.modal-title {
+          margin-left: auto;
+          margin-right: auto;
+          font-weight: 700;
+      }
+  }
+
+  .modal-body {
+      padding: 10px 30px;
+
+      .description, .due-date {
+          font-size: 1.1rem;
+          cursor: pointer;
+      }
+
+      small {
+          cursor: pointer;
+      }
+
+      span.cancel {
+          font-size: 1.75rem;
+          color: red;
+          line-height: 1.75rem;
+      }
+
+      fieldset {
+          legend {
+              border-bottom: 1px solid $trello-secondary-color;
+          }
+      }
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../palette';
+
+.card {
+    background-color: $trello-secondary-color-light;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: none;
+
+    &:hover {
+        background-color: darken($trello-secondary-color-light, 5%);
+    }
+
+    p.title, p.description {
+        margin-bottom: 0.1rem;
+    }
+
+    p.title {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+}

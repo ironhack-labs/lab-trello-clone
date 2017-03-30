@@ -1,0 +1,14 @@
+@import '../../../palette';
+
+:host {
+    background-color: $trello-secondary-color;
+
+    legend {
+        margin-bottom: 0;
+    }
+
+    .description, .due-date {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid $trello-secondary-color-light
+    }
+}
