@@ -2,6 +2,7 @@ const Q = require('q');
 const _ = require('lodash');
 const listModel = require('./list.model');
 const cardModel = require('../card/card.model');
+const ApiError = require('../api-error.model');
 
 exports.getLists = function(req, res, next) {
   	listModel.find({}, function(err, lists) {
@@ -63,6 +64,6 @@ exports.editList = function(req, res, next) {
 exports.removeList = function (req, res) {
   const cardId = req.params.id;
   listModel.findByIdAndRemove(cardId)
-    .then(console.log("everything ok, list removed");)
-    .catch(error => next(error));
+    .then(console.log("everything ok, list removed"))
+    .catch(error => next(new ApiError(error.message, 404)));
 };

@@ -14,10 +14,11 @@ const listSchema = new mongoose.Schema({
     type: [String],
     default: [],
     require: true
-  },
-  timestamps: {
-    createAt: "create_at",
-    updateAt: "update_at"
+  }
+},{
+    timestamps: {
+      createAt: "create_at",
+      updateAt: "update_at"
   }
 });
 
