@@ -51,7 +51,7 @@ exports.editList = function(req, res, next) {
                 list.save(function(err) {
                     if (err) {
                         res.json({ message: 'impossible to update the list', error: err });
-                    };
+                    }
                     res.json({ message: 'list successfully updated', list });
                 });
             } else {
@@ -61,5 +61,8 @@ exports.editList = function(req, res, next) {
 };
 
 exports.removeList = function (req, res) {
-  // Lesson 2: Implement remove list form the database
+  const cardId = req.params.id;
+  listModel.findByIdAndRemove(cardId)
+    .then(console.log("everything ok, list removed");)
+    .catch(error => next(error));
 };
