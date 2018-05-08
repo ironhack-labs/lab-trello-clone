@@ -1,0 +1,25 @@
+<div class="list-container">
+  <div class="remove-button-container">
+    <span class="fa fa-remove" (click)="removeList()"> </span>
+  </div>
+
+  <!-- List title -->
+  <div class="title-section">
+    <span class="title" [hidden]="isEditing" (click)="isEditing = !isEditing"> {{ list.title }} </span>
+    <input class="list-title-input" type="text" name="title" placeholder="enter the title..." 
+            autocomplete="off" autofocus maxlength="512" [(ngModel)]="list.title"
+            [hidden]="!isEditing" (keyup.enter)="onListEdit.emit(list); isEditing = false;" />
+    <span class="subtitle"> {{ list.cards?.length }} cards </span>
+  </div>
+
+  <!-- Card list -->
+  <div [id]="list._id" class="card-list-container" [dragula]='"cards"' [dragulaModel]="list.cards">
+    <div [id]="card._id" *ngFor="let card of list?.cards; let last = last">
+      <trello-card [card]="card" (onDelete)="removeCard($event)"></trello-card>
+    </div>
+  </div>
+
+  <!-- Add new card placeholder -->
+  <trello-placeholder (onSave)="addCard($event)" [placeholder]="'Add a card...'"></trello-placeholder>
+</div>
+

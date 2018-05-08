@@ -1,0 +1,16 @@
+<div class="item-placeholder-wrapper">
+  <div class="item-placeholder" [ngClass]="{ 'editing': isEditing }">
+    <form class="item-form-placeholder">
+      <span class="placeholder" [hidden]="isEditing" (click)="toggleEdit()"> {{ placeholder }} </span>
+      
+      <input class="form-control" type="text" name="name" placeholder="enter the title..." 
+            autocomplete="off" autofocus maxlength="512" [(ngModel)]="title"
+            *ngIf="isEditing" />
+
+      <div class="list-add-controls u-clearfix mt-2 mb-2" [hidden]="!isEditing">
+        <button class="btn btn-sm btn-success" (click)="save()"> save </button>
+        <a class="cancel" (click)="toggleEdit()"> X </a>
+      </div>
+    </form>
+  </div>
+</div>

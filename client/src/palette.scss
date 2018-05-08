@@ -1,0 +1,22 @@
+$blue: rgb(0, 121, 191);
+$light-blue: lighten($blue, 10%);
+$dark-blue: darken($blue, 7%);
+
+$gray: rgb(226, 228, 230);
+$light-gray: lighten($gray, 10%);
+$dark-gray: darken($gray, 35%);
+$darker-gray: darken($gray, 50%);
+
+// Base color
+$white: white;
+$black: black;
+$trello-danger: #d9534f;
+
+// Palette
+$trello-primary-color: $blue;
+$trello-primary-color-light: $light-blue;
+$trello-primary-color-dark: $dark-blue;
+$trello-secondary-color: $gray;
+$trello-secondary-color-light: $light-gray;
+$trello-secondary-color-dark: $dark-gray;
+$trello-secondary-color-extra-dark: $darker-gray;

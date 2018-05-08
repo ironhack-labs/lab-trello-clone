@@ -1,0 +1,63 @@
+@import '../../palette';
+
+:host {
+    background-color: $trello-secondary-color;
+    margin-right: 15px;
+    border-radius: 5px;
+    position: relative;
+    padding: 15px 10px;
+    cursor: pointer;
+    overflow-y: scroll;
+    display: inline-table;
+    width: 270px;
+}
+
+.list-container {
+
+    .title-section {
+        min-height: 55px;
+        display: block;
+
+        span.title {
+            padding: 0 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            line-height: 1.1rem;
+        }
+
+        span.subtitle {
+            padding: 0 10px;
+            display: block;
+            color: $trello-secondary-color-extra-dark;
+        }
+
+        .list-title-input {
+            font-size: 1.1rem;
+            padding: 0 5px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            width: 90%;
+            background-color: $white;
+            outline: none;
+        }
+    }
+
+    .remove-button-container {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        color: $trello-danger;
+    }
+
+    .card-list-container {
+        min-height: 1px;
+        max-height: 70vh;
+        overflow-y: scroll;
+
+        & > div:last-child > trello-card {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+}
