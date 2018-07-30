@@ -1,0 +1,5 @@
+<p>
+  board works!
+</p>
+
+<app-list *ngFor = "let l of lists" [list]="l" (onCreateCard)="updateBoard()"></app-list>

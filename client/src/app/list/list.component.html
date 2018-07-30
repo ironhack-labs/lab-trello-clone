@@ -1,0 +1,11 @@
+
+<div class="listWrap">
+<h1> list: {{list.title}}</h1>
+<div *ngFor = "let c of list.cards">
+  <app-card [card]="c"></app-card>
+</div>
+<form>
+  <input [(ngModel)]="title" name="title">
+  <button (click)="addCard()">Add Card</button>
+</form>
+</div>
