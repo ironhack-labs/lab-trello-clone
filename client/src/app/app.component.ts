@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'trello-root',
-  template: `
-    <div class="trello-container">
-      <trello-header></trello-header>
-      <trello-board></trello-board>
-    </div>
-  `
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'app';
